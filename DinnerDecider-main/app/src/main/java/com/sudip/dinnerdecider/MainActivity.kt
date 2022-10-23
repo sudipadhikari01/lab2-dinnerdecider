@@ -2,17 +2,20 @@ package com.sudip.dinnerdecider
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.sudip.dinnerdecider.R
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), OnClickListener {
     //default food list
-    private var defaultFoods = arrayOf("Pizza", "Burger", "Chicken", "Sandwich", "Indian")
+    private var defaultFoods = arrayOf(
+        "Hamburger", "Pizza",
+        "Mexican", "American", "Chinese"
+    )
 
     private lateinit var newFoodEditTxt: EditText
     private lateinit var foodNameTxtView: TextView
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     fun initView() {
         //initialize the views
         val addFoodBtn: Button = findViewById(R.id.addFoodBtn)
-        latestFoodTxt = findViewById(R.id.latestFoodTxt)
+        newFoodEditTxt = findViewById(R.id.newFoodTxt)
         foodNameTxtView = findViewById(R.id.foodNameTxt)
         val decideBtn: Button = findViewById(R.id.decideBtn)
 
